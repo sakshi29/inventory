@@ -1,9 +1,20 @@
-spring:
-    datasource:
-    platform: postgres
-    url: jdbc:postgresql://localhost:5432/postgres
-    username: postgres
-    password: aircraft29
-
 server:
     port: 9000
+
+logging:
+    level:
+      root: DEBUG
+
+spring:
+    flyway:
+      locations: "classpath:db/migration"
+      schemas: "public"
+      placeholder-prefix: "^^^$$"
+      placeholder-suffix: "$$"
+      validate-on-migration: false
+      baseline-on-migrate: true
+    datasource:
+      driverClassName: org.postgresql.Driver
+      url: jdbc:postgresql://localhost:5432/postgres
+      username: postgres
+      password: aircraft29

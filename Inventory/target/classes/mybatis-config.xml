@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <environments default="public">
+        <environment id="public">
+            <transactionManager type="JDBC" />
+            <dataSource type="POOLED">
+                <property name = "url" value = "jdbc:postgresql://localhost:5432/postgres"/>
+                <property name = "username" value = "postgres"/>
+                <property name = "password" value = "aircraft29"/>
+            </dataSource>
+        </environment>
+    </environments>
+    <mappers>
+        <package name="org.mapper"/>
+    </mappers>
+</configuration>
